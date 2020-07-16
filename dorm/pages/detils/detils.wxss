@@ -1,0 +1,200 @@
+/* pages/index/detils/detils.wxss */
+
+.top {
+  width: 100%;
+  margin-bottom: 20rpx;
+}
+
+.top-content {
+  display: inline-block;
+  width: 500rpx;
+}
+
+.top-title {
+  width: 100%;
+  display: inline-block;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.top-title .title {
+  font-size: 38rpx;
+  white-space: nowrap;
+}
+
+.top-title .sub-title {
+  font-size: 20rpx;
+  white-space: nowrap;
+  display: inline-block;
+}
+
+.top-button {
+  margin-top: 0rpx;
+  display: inline-block;
+}
+
+.cu-capsule {
+  margin-left: 10rpx;
+}
+
+.group {
+  float: right;
+  right: 0rpx;
+  margin: 10rpx 5rpx;
+}
+
+.group text {
+  font-size: 70rpx;
+  z-index: 99;
+  left: 20rpx;
+}
+
+.qrcode {
+  margin: 20rpx 10rpx 0 0;
+  width: 110rpx;
+  height: 110rpx;
+}
+
+.dorm-breif {
+  display: block;
+}
+
+.breif {
+  height: 80rpx;
+  /* white-space: nowrap; *//* white-space:pre-wrap; */
+  overflow: hidden;
+  /* text-overflow: ellipsis; */
+  margin-bottom: 40rpx;
+}
+
+.dots {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 60rpx;
+  padding-left: 4rpx;
+  background-color: white;
+}
+
+.dorm-breif>view {
+  margin-bottom: 10rpx;
+}
+
+.dorm-tags {
+  margin-bottom: 5rpx;
+}
+
+.dorm-tags>view {
+  margin: 5rpx;
+}
+
+.table, .table div {
+  margin: 0 auto;
+}
+
+.table {
+  display: table;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-tr {
+  display: table-row;
+}
+
+.table-th {
+  display: table-cell;
+  background-color: ghostWhite;
+  border: 0rpx solid gray;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.table-td {
+  display: table-cell;
+  border: 0rpx solid gray;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.cu-card {
+  display: inline;
+}
+
+.cu-card>.cu-item {
+  display: block;
+  width: 33%;
+  background-color: var(--white);
+  overflow: hidden;
+  border-radius: 10rpx;
+  margin: 30rpx;
+}
+
+.cu-card>.cu-item.shadow-blur {
+  overflow: initial;
+}
+
+.cu-card.no-card>.cu-item {
+  margin: 0rpx;
+  border-radius: 0rpx;
+}
+
+.cu-card.case .image {
+  position: relative;
+}
+
+.cu-card.case .image image {
+  width: 100%;
+}
+
+.cu-card.case .image .cu-tag {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.cu-card.case .image .cu-bar {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: transparent;
+  padding: 0rpx 30rpx;
+}
+
+.cu-card.case.no-card .image {
+  margin: 30rpx 30rpx 0;
+  overflow: hidden;
+  border-radius: 10rpx;
+}
+
+.cu-card.dynamic {
+  display: block;
+}
+
+.cu-card.dynamic>.cu-item {
+  display: block;
+  background-color: var(--white);
+  overflow: hidden;
+}
+
+.previewimg {
+  float: left;
+  width: 30%;
+  height: 100px;
+  margin: 1.5%;
+}
+
+.previewimg image {
+  width: 100%;
+  height: 100%;
+}
+
+.upload-img {
+  right: 10%;
+  bottom: 140rpx;
+}
+
+.forward {
+  z-index: 999;
+  bottom: 50rpx;
+}

@@ -1,0 +1,50 @@
+{
+  "pages": [
+    
+    "pages/index/index",
+    "pages/my/my",
+    "pages/detils/detils",
+    "pages/map/map",
+    "pages/post/post",
+    "pages/about/about",
+    "pages/collection/collection"
+    
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "borderStyle": "white",
+    "position": "bottom",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "主页",
+        "iconPath": "images/tab/index.png",
+        "selectedIconPath": "images/tab/index.png"
+      },
+      {
+        "pagePath": "pages/map/map",
+        "text": "地图",
+        "iconPath": "images/tab/map.png",
+        "selectedIconPath": "images/tab/map.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "images/tab/my.png",
+        "selectedIconPath": "images/tab/my.png"
+      }
+    ]
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "sitemapLocation": "sitemap.json",
+  "navigateToMiniProgramAppIdList": [
+    "wxd73993c5652e1ef8"
+  ]
+}

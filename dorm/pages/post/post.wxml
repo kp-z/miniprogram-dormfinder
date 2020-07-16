@@ -1,0 +1,27 @@
+<!--dorm/pages/post/post.wxml-->
+<block>
+  <view>
+    <!-- <image class="title-image" src="{{postData.cover}}"></image> -->
+    <view >
+      <view class="title-image" style="background-image:linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 0, 0, 0)), url({{postData.cover}})"></view>
+
+      <view class="padding post-info">
+        <view class="title text-xxl text-bold">{{postData.title}}</view>
+        <view class="author text-black">作者：{{postData.author}}</view>
+        <view class="post-interaction">
+          <text class="cuIcon-favor text-yellow"></text>
+          <text class="cuIcon-like text-red"></text>
+          <text class="cuIcon-share text-blue"></text>
+        </view>
+        <view class="post-tags">
+          <view class="cu-tag radius sm" wx:for="{{postData.tags}}" wx:key="postags">
+            {{item}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="post-content padding">
+    <text class="text-lg">{{postData.content}}</text>
+    <!-- <rich-text>{{postData.content}}</rich-text> -->
+  </view>
+</block>

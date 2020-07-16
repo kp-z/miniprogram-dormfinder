@@ -1,0 +1,6 @@
+{
+    "component": true,
+    "usingComponents": {
+        "WxLogin": "/components/NewWxComment/component/WxLogin/WxLogin"
+    }
+}

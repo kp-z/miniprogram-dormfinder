@@ -1,0 +1,31 @@
+<!--components/mymap/mymap.wxml-->
+<map 
+  id="myMap"  
+  longitude="{{longitude}}" 
+  latitude="{{latitude}}" 
+  scale="{{scale}}" 
+  markers="{{markers}}"  
+  covers="{{covers}}"
+  bindcallouttap="callOutTap"  
+  show-location="true" 
+  style="width: {{width}}%; height: {{height}}px">
+</map>
+
+<view class="map-form" wx:if="{{controllerBar}}">
+  <view class="action" >
+    <button class="cu-btn focus cuIcon-focus" bindtap="moveToLocation"></button>
+    <button class="cu-btn full cuIcon-full" bindtap="includePoints" ></button>
+    <button class="cu-btn filter bg-green  shadow cuIcon-filter" bindtap="showModal" data-target="ChooseModal"></button>
+  </view>
+
+  <view class="cu-modal bottom-modal {{modalName=='ChooseModal'?'show':''}}" bindtap="hideModal">
+    <view class="cu-dialog" catchtap>
+      <view class="grid col-3 padding-sm">
+        <view wx:for="{{checkbox}}" class="padding-xs" wx:key="{{index}}">
+          <button class="cu-btn green lg block {{item.checked?'bg-green':'line-grey'}}" bindtap="ChooseCheckbox" data-value="{{item.value}}"> {{item.name}}
+          </button>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

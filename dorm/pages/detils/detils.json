@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "找地儿住",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "NewWxComment": "/components/NewWxComment/component/NewWxComment/NewWxComment",
+    "mymap": "../../components/mymap/mymap"
+  }
+}

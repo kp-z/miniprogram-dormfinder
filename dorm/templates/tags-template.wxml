@@ -1,0 +1,6 @@
+<template name="tagsTemplate">
+  <view class="dorm-tags">
+    <text class="cuIcon-tag"></text>
+    <view class="cu-tag radius sm" wx:for="{{Tag}}" wx:key="tag">{{item}}</view>
+  </view>
+</template>

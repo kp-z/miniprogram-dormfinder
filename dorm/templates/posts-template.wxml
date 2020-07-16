@@ -1,0 +1,18 @@
+<template name="postsTemplate">
+  <view class="cu-card article {{isCard?'no-card':''}}">
+    <view catchtap="onPostsTap" data-postid="{{post.postid}}" wx:for="{{posts}}"  wx:for-item="post" class="cu-item shadow bg-grey">
+      <view class="title">
+        <view class="text-cut">{{post.title}}</view>
+      </view>
+      <view class="content">
+        <image src="{{post.cover}}" mode="aspectFill"></image>
+        <view class="desc">
+          <view class="text-content">{{post.brief}}</view>
+          <view>
+            <view wx:for="{{post.tags}}" class="cu-tag bg-red light sm round">{{item}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>

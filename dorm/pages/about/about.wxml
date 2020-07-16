@@ -1,0 +1,16 @@
+<!--dorm/pages/about/about.wxml-->
+<view class='margin-xl bg-ghostWhite padding-xl radius shadow-lg'>
+
+  <view class='text-center margin-bottom text-xl  text-grey'>你好,我是Kp</view>
+  <view class='text-content'>
+    <view>
+      波恩大学计算机系的在读研究生.</view>
+      <view>
+      关于我的一切可以在这找到： zkpeace.com</view>
+    <view class='margin-top-sm'>制作这个小程序的初衷是能让大家交流分享学生宿舍的信息，少踩一些坑，安心学习。</view>
+    <view class='margin-top-sm text-bold'>作者：kp</view>
+    <view class='margin-top-sm text-bold'>数据贡献：kp 连维耕 吴柔婧</view>
+     <view class='margin-top-sm'>感谢波恩学联提供帮助</view>
+    <view class='margin-top-sm'>更多功能敬请期待！</view>
+  </view>
+</view>

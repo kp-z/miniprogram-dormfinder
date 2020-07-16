@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+        "searchbar": "../../components/searchbar/searchbar"
+  },
+  "navigationBarTitleText": "找地儿住"
+
+}

@@ -1,0 +1,27 @@
+/* pages/map/map.wxss */
+
+.map-top{
+  position: fixed;
+  top: 0rpx;
+  z-index: 99;
+  width: 100%;
+}
+
+.map-form{
+  position: fixed;
+  z-index: 99;
+  right: 20rpx;
+  bottom: 10rpx;
+}
+
+.map-form .focus{
+  background-color:transparent;
+}
+
+.map-form .full{
+  background-color:transparent;
+}
+
+.map-form .filter{
+  opacity: 0.8
+}

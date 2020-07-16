@@ -1,0 +1,25 @@
+/* pages/index/index.wxss */
+
+.nav .cu-item {
+  height: 70rpx;
+  display: inline-block;
+  line-height: 90rpx;
+  margin: 0 0 0 40rpx;
+  padding: 0;
+}
+
+.ad-name {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.swiper-title{
+  position: absolute;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 60%;
+  z-index: 4;
+  left: 40rpx;
+  bottom: 80rpx;
+}

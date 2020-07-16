@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "mymap": "../../components/mymap/mymap",
+    "searchbar": "../../components/searchbar/searchbar"
+  },
+  "navigationBarTitleText": "找地儿住"
+}

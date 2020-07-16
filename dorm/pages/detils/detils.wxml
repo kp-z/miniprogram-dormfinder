@@ -1,0 +1,128 @@
+<!--pages/index/detils/detils.wxml-->
+<import src="../../templates/tags-template.wxml" />
+
+<view>
+  <view class="padding">
+    <view class="top">
+      <view class="top-content">
+        <view class="top-title">
+          <text class="title text-bold text-black">{{dormData.Name}}</text>
+          <text class="sub-title cuIcon-location text-xs text-gray" bindtap="copyAddress" data-address="{{dormData.Address}}"> {{dormData.Address}}</text>
+        </view>
+        <view class="top-button">
+          <view class="cu-tag radius  bg-blue" bindtap="copyUrl" data-url="{{dormData.Website}}" data-name="官网">官方</view>
+          <view class="cu-tag radius bg-orange" bindtap="copyUrl" data-url="{{dormData.Apply}}" data-name="申请">申请</view>
+          
+
+          <view class="cu-capsule radius " bindtap="onColletionTap">
+            <view class="cu-tag bg-red ">
+              <text class="cuIcon-{{collected?'favorfill':'favor'}} text-white"></text>
+            </view>
+            <view class="cu-tag line-grey ">
+              {{collected? 10: 9}}
+            </view>
+          </view>
+
+          <view class="cu-capsule radius " bindtap="showCommunityModal">
+            <view class="cu-tag bg-cyan ">
+              <text class="cuIcon-friend text-white"></text>
+            </view>
+            <view class="cu-tag line-grey ">
+              3
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="group"  >
+        <image class="qrcode"  bindtap="showCommunityModal" src="../../images/planet.png"></image>
+      </view>
+
+      <!-- 社区Module -->
+      <view class="cu-modal {{showCommunity?'show':''}}">
+        <view class="cu-dialog">
+          <view>
+            <view class="cu-bar justify-end text-white">
+              <view class="action" bindtap="hideCommunityModal">
+                <text class="cuIcon-close "></text>
+              </view>
+            </view>
+            <image src="https://bonn-dorm-1253324855.cos.eu-frankfurt.myqcloud.com/qrcode/common-community.jpg" bindtap="previewCommuImage" class="png" mode="widthFix"></image>
+
+          </view>
+          <view class="cu-bar bg-white">
+            <view class="action margin flex-sub  solid-left">想了解宿舍环境？想找邻居借酱油？扫码加管理员微信,备注宿舍名称,加入社区微信群，找到组织，朋友就在你身边。</view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="dorm-breif text-sm">
+      <template is="tagsTemplate" data="{{...dormData}}"></template>
+      <view class="solid-bottom breif" >
+        <view class="cuIcon-text text-xs" bindtap="showBrief" data-value='{{dormData.Breif}}'>介绍：{{dormData.Breif}}<i class='dots'>...</i></view>
+        
+      </view>
+
+      <view class="table">
+        <view class="table-tr">
+          <view class="table-th">宿舍类型</view>
+          <view class="table-th">大小/平米</view>
+          <view class="table-th">数量/间</view>
+          <view class="table-th">家具</view>
+          <view class="table-th">价格/月</view>
+        </view>
+        <view class="table-tr" wx:for="{{dormData.roomTypeList}}" wx:key='typroomTypeList'>
+          <view class="table-td">{{item.type}}</view>
+          <view class="table-td">{{item.size}}</view>
+          <view class="table-td">{{item.number}}</view>
+          <view class="table-td">{{item.furnished}}</view>
+          <view class="table-td">{{item.price}}</view>
+        </view>
+      </view>
+    </view>
+
+  </view>
+</view>
+
+<scroll-view scroll-x class="bg-white nav padding">
+  <view class="flex text-center">
+    <!-- <view class="cu-item flex-sub {{index==TabCur?'text-blue cur':''}}" wx:for="{{3}}" wx:key bindtap="tabSelect" data-id="{{index}}">
+      Tab{{index}}
+    </view> -->
+    <view class="cu-item flex-sub {{0==TabCur?'text-blue cur':''}}" bindtap="tabSelect" data-id="0">
+      图片
+    </view>
+    <view class="cu-item flex-sub {{1==TabCur?'text-blue cur':''}}" bindtap="tabSelect" data-id="1">
+      评价
+    </view>
+    <view class="cu-item flex-sub {{2==TabCur?'text-blue cur':''}}" bindtap="tabSelect" data-id="2">
+      周边
+    </view>
+  </view>
+</scroll-view>
+
+<block wx:if="{{TabCur==2}}">
+  <view class="page-section page-section-gap">
+    <mymap longitude="{{dormData.mapInfo.longitude}}" latitude="{{dormData.mapInfo.latitude}}" scale="16" width="100" height="{{windowHeight}}"></mymap>
+  </view>
+</block>
+
+<block wx:if="{{TabCur==1}}">
+  <view class="page-section page-section-gap padding">
+    <NewWxComment id="NewWxComment" articleTitle="关于我" articleURL="{{dormData.dormId}}.html" contentLen='1' articleID="{{dormData.dormId}}.html"></NewWxComment>
+  </view>
+</block>
+
+<block wx:if="{{TabCur==0}}">
+  <view class="padding">
+    <view wx:for="{{dormData.imageList}}" wx:key='imageList' class="previewimg">
+      <image mode="aspectFill" src="{{item}}" data-src="{{item}}" data-list="{{dormData.imageList}}" bindtap="previewImage"></image>
+    </view>
+  </view>
+  <view class="upload-img">
+    <button bindtap="uploadImg" class="cu-btn cuIcon-add bg-green shadow"></button>
+  </view>
+</block>
+<view class="upload-img forward">
+  <button class="cu-btn cuIcon-forward bg-white shadow" open-type="share"></button>
+</view>

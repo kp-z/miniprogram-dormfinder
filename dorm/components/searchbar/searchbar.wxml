@@ -1,0 +1,21 @@
+<import src="../../templates/dorms-template.wxml" />
+<import src="../../templates/tags-template.wxml" />
+<view class="cu-bar search bg-white">
+  <view class="action" bindtap="selectCity">
+    <text>波恩</text>
+    <text class="cuIcon-triangledownfill"></text>
+  </view>
+  <view class="search-form round">
+    <text class="cuIcon-search"></text>
+    <input type="text" placeholder="搜索位置、标签、名称" confirm-type="search" bindfocus="onBindFocus" bindinput="onBindInput" bindblur="onBindBlur" value="{{inputValue}}"></input>
+    <text wx:if="{{searchPanelShow||tagsPanelShow}}" class="cuIcon-close" catchtap="onCancelImgTap"></text>
+  </view>
+</view>
+<block wx:if="{{searchPanelShow}}">
+  <template is="dormsTemplate" data="{{...searchResult}}"></template>
+</block>
+<block wx:if="{{tagsPanelShow}}">
+  <view class="dorm-tags margin">
+    <view class="cu-tag radius xl" wx:for="{{Tag}}" data-tag="{{item}}" bindtap="onTagsTap" wx:key>{{item}}</view>
+  </view>
+</block>

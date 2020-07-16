@@ -1,0 +1,5 @@
+<!--dorm/pages/collection/collection.wxml-->
+<import src="../../templates/dorms-template.wxml" />
+<block>
+  <template is="dormsTemplate" data="{{...searchResult}}"></template>
+</block>

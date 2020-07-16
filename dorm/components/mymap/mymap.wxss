@@ -1,0 +1,24 @@
+/* components/mymap/mymap.wxss */
+
+@import '../colorui/main.wxss';
+@import '../colorui/icon.wxss';
+
+.map-form{
+  position: fixed;
+  z-index: 99;
+  right: 20rpx;
+  bottom: 10rpx;
+
+  
+}
+.map-form .focus{
+  background-color:transparent;
+}
+
+.map-form .full{
+  background-color:transparent;
+}
+
+.map-form .filter{
+  opacity: 0.8
+}

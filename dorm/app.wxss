@@ -1,0 +1,25 @@
+
+@import './components/weui-miniprogram/weui-wxss/dist/style/weui.wxss';
+@import './components/colorui/main.wxss';
+@import './components/colorui/icon.wxss';
+
+text{
+    font-family: MicroSoft Yahei;
+    font-size: 24rpx;
+    color: #666;
+}
+
+input{
+    font-family: MicroSoft YaHei;
+}
+.upload-img{
+  position: fixed;
+  right: 50%;
+  margin-right: -35rpx;
+  bottom: 35rpx;
+}
+.upload-img button{
+  width: 70rpx;
+  height: 70rpx;
+  border-radius: 50%;
+}

@@ -1,0 +1,12 @@
+<template name="dormsTemplate">
+  <view class="padding">
+    <view class="grid col-3 grid-square">
+      <view class="bg-img " wx:for="{{dorms}}" wx:for-item="dorm" wx:key="dorms" catchtap="onDetilsTap" data-dormid="{{dorm.dormId}}">
+        <image mode="aspectFill" src='{{dorm.Cover}}'></image>
+        <text class="ad-name text-cut" >{{dorm.Name}}</text>
+        <view class="cu-tag radius text-white sm" style="background-color: {{dorm.Category=='学校'?'#8dc63f':'#f37b1d'}}; opacity: 0.7; postion:absolute;height:25rpx; top: 175rpx;right: 10rpx">{{dorm.Category}}</view>
+        <text class="ad-more text-cut">0人收藏</text>
+      </view>
+    </view>
+  </view>
+</template>

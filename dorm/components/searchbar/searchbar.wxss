@@ -1,0 +1,24 @@
+/* components/searchbar/searchbar.wxss */
+@import '../colorui/main.wxss';
+@import '../colorui/icon.wxss';
+.nav .cu-item {
+  height: 70rpx;
+  display: inline-block;
+  line-height: 90rpx;
+  margin: 0 0 0 40rpx;
+  padding: 0;
+}
+
+.ad-name {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.cu-tag{
+  margin-top: 20rpx
+}
+
+.search{
+  z-index: 99
+}

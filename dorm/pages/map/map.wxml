@@ -1,0 +1,44 @@
+<!--pages/map/map.wxml-->
+
+<searchbar dormList="{{allDormsData}}" bind:containerShow="containerShow"></searchbar>
+
+<block wx:if="{{containerShow}}">
+  <!-- <mymap longitude="7.1062496" latitude="50.7321655" scale="12" width="100" height="{{windowHeight}}" controllerBar></mymap> -->
+  <view class="page-section page-section-gap">
+    <map 
+      id="myMap" 
+      style="width: 100%; height:{{windowHeight}}px;" 
+      scale="10"  
+      latitude="50.7321655"  
+      longitude="7.1062496"
+      markers="{{markers}}" 
+      bindcallouttap="callOutTap"  
+      show-location></map>
+  </view>
+  <!-- <view class="btn-area">
+    <button bindtap="getCenterLocation" class="page-body-button" type="primary">获取位置</button>
+    <button bindtap="moveToLocation" class="page-body-button" type="primary">移动位置</button>
+    <button bindtap="translateMarker" class="page-body-button" type="primary">移动标注</button>
+    <button bindtap="includePoints" class="page-body-button" type="primary">缩放视野展示所有经纬度</button>
+  </view> -->
+
+  <!--  -->
+  <view class="map-form" >
+    <view class="action">
+      <button class="cu-btn focus cuIcon-focus" bindtap="moveToLocation"></button>
+      <button class="cu-btn full cuIcon-full" bindtap="includePoints"></button>
+      <button class="cu-btn filter bg-green  shadow cuIcon-filter" bindtap="showModal" data-target="ChooseModal"></button>
+    </view>
+
+    <view class="cu-modal bottom-modal {{modalName=='ChooseModal'?'show':''}}" bindtap="hideModal">
+      <view class="cu-dialog" catchtap>
+        <view class="grid col-3 padding-sm">
+          <view wx:for="{{checkbox}}" class="padding-xs" wx:key="checkbox">
+            <button class="cu-btn green lg block {{item.checked?'bg-green':'line-grey'}}" bindtap="ChooseCheckbox" data-value="{{item.value}}"> {{item.name}}
+            </button>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</block>

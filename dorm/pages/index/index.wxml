@@ -1,0 +1,150 @@
+<!--pages/index/index.wxml-->
+<import src="../../templates/dorms-template.wxml" />
+<import src="../../templates/posts-template.wxml" />
+
+
+<searchbar dormList="{{allDormsData}}" bind:containerShow="containerShow"></searchbar>
+
+<block wx:if="{{containerShow}}">
+  <swiper class="card-swiper round-dot" indicator-dots="true" circular="true" autoplay="false" interval="5000" duration="500" bindchange="cardSwiper" indicator-color="#8799a3" indicator-active-color="#7ed321">
+    <swiper-item wx:for="{{[0,1,2]}}" wx:key="indexSwiper" class="{{cardCur==index?'cur':''}}" catchtap="onPostsTap" data-postid="{{item}}">
+      <view class="swiper-item">
+        <image src="{{postList.posts[item].cover}}" mode="aspectFill" ></image>
+        <!-- <text class="swiper-title text-xl text-white text-bold">{{postList.posts[item].title}}</text> -->
+      </view>
+    </swiper-item>
+  </swiper>
+
+  <scroll-view scroll-x class="bg-white nav" scroll-with-animation scroll-left="{{scrollLeft}}">
+    <!-- <view class="cu-item {{index==TabCur?'text-olive cur':''}}" wx:for="{{4}}" wx:key bindtap="tabSelect" data-id="{{index}}">
+    页面{{index}}
+  </view> -->
+    <view class="cu-item {{0==TabCur?'text-olive cur':''}}" bindtap="tabSelect" data-id="0">
+      学校宿舍
+    </view>
+    <view class="cu-item {{1==TabCur?'text-olive cur':''}}" bindtap="tabSelect" data-id="1">
+      商业宿舍
+    </view>
+    <view class="cu-item {{2==TabCur?'text-olive cur':''}}" bindtap="tabSelect" data-id="2">
+      发布私房
+    </view>
+    <view class="cu-item {{3==TabCur?'text-olive cur':''}}" bindtap="tabSelect" data-id="3">
+      公告帖子
+    </view>
+  </scroll-view>
+  <block wx:if="{{TabCur==0}}">
+    <template is="dormsTemplate" data="{{...dormList}}"></template>
+  </block>
+
+  <block wx:if="{{TabCur==1}}">
+    <view class="cu-bar bg-white">
+      <view class="action">
+        <text class="cuIcon-titles text-olive"></text>
+        <text class="text-xl text-bold">欢迎联系作者提供相关信息～</text>
+      </view>
+    </view>
+    <template is="dormsTemplate" data="{{...cdormList}}"></template>
+  </block>
+
+  <block wx:if="{{TabCur==2}}">
+    <view class="cu-bar bg-white">
+      <view class="action">
+        <text class="cuIcon-titles text-olive"></text>
+        <text class="text-xl text-bold">暂未开放，以下信息为样板信息</text>
+      </view>
+    </view>
+
+    <view class="cu-card case {{isCard?'no-card':''}}">
+      <view class="cu-item shadow bg-grey">
+        <view class="image">
+          <image src="https://i.loli.net/2020/02/18/I3suG6bfcCMJBzw.jpg" mode="widthFix"></image>
+          <view class="cu-tag radius bg-red">寻找室友</view>
+          <view class="cu-bar bg-shadeBottom">
+            <text class="text-cut text-white">【限女生】本人男，找了个好私房，找一个长得漂亮，身材好的室友，能做饭更好</text>
+          </view>
+        </view>
+        <view class="cu-list menu-avatar">
+          <view class="cu-item">
+            <view class="cu-avatar round lg" style="background-image:url(https://i.loli.net/2020/02/18/I3suG6bfcCMJBzw.jpg);"></view>
+            <view class="content flex-sub">
+              <view class="text-grey">不刷碗星人</view>
+              <view class="text-gray text-sm flex justify-between">
+                2021.01.01
+                <view class="text-gray text-sm">
+                  <text class="cuIcon-attentionfill margin-lr-xs"></text> 10
+                  <text class="cuIcon-appreciatefill margin-lr-xs"></text> -10
+                  <text class="cuIcon-messagefill margin-lr-xs"></text> 30
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="cu-card case {{isCard?'no-card':''}}">
+      <view class="cu-item shadow bg-grey">
+        <view class="image">
+          <image src="https://i.loli.net/2020/02/18/I3suG6bfcCMJBzw.jpg" mode="widthFix"></image>
+          <view class="cu-tag radius bg-red">我要那和</view>
+          <view class="cu-bar bg-shadeBottom">
+            <text class="text-cut text-white">距主楼100公里，贼便宜1000欧/月，去超市俩小时，方便</text>
+          </view>
+        </view>
+        <view class="cu-list menu-avatar">
+          <view class="cu-item">
+            <view class="cu-avatar round lg" style="background-image:url(https://i.loli.net/2020/02/18/I3suG6bfcCMJBzw.jpg);"></view>
+            <view class="content flex-sub">
+              <view class="text-grey">假学生</view>
+              <view class="text-gray text-sm flex justify-between">
+                2021.01.01
+                <view class="text-gray text-sm">
+                  <text class="cuIcon-attentionfill margin-lr-xs"></text> 10
+                  <text class="cuIcon-appreciatefill margin-lr-xs"></text> -10
+                  <text class="cuIcon-messagefill margin-lr-xs"></text> 30
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="cu-card case {{isCard?'no-card':''}}">
+      <view class="cu-item shadow bg-grey">
+        <view class="image">
+          <image src="https://i.loli.net/2020/02/18/I3suG6bfcCMJBzw.jpg" mode="widthFix"></image>
+          <view class="cu-tag radius bg-red">房东直出</view>
+          <view class="cu-bar bg-shadeBottom">
+            <text class="text-cut text-white">新房寻租户，干（Hao）净（Pian）的小哥哥小姐姐快来吧！</text>
+          </view>
+        </view>
+        <view class="cu-list menu-avatar">
+          <view class="cu-item">
+            <view class="cu-avatar round lg" style="background-image:url(https://i.loli.net/2020/02/18/I3suG6bfcCMJBzw.jpg);"></view>
+            <view class="content flex-sub">
+              <view class="text-grey">黑中介</view>
+              <view class="text-gray text-sm flex justify-between">
+                2021.01.01
+                <view class="text-gray text-sm">
+                  <text class="cuIcon-attentionfill margin-lr-xs"></text> 10
+                  <text class="cuIcon-appreciatefill margin-lr-xs"></text> -10
+                  <text class="cuIcon-messagefill margin-lr-xs"></text> 30
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="upload-img">
+        <button bindtap="writePost" class="cu-btn cuIcon-add bg-olive shadow"></button>
+      </view>
+    </view>
+  </block>
+  <block wx:if="{{TabCur==3}}">
+
+    <template is="postsTemplate" data="{{...postList}}"></template>
+    <view class="upload-img">
+      <button bindtap="writePost" class="cu-btn cuIcon-add bg-olive shadow"></button>
+    </view>
+  </block>
+</block>
