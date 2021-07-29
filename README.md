@@ -1,5 +1,6 @@
 # miniprogram-dormfinder
-海外留学宿舍信息服务
+
+大学生找房小程序
 
 ## 介绍
 
