@@ -1,6 +1,6 @@
 # miniprogram-dormfinder
 
-大学生找房小程序
+大学生找房微信小程序
 
 ## 介绍
 
